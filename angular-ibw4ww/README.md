@@ -1,40 +1,14 @@
 # Angular
 
----------------------------------------------------------
-
-
-
-
-30 天精通 Git 版本控管
-https://github.com/doggy8088/Learn-Git-in-30-days
-
-
-
-
-
-
-Angular 深入淺出三十天 系列
-https://ithelp.ithome.com.tw/users/20090728/ironman/1600
-
-
-Angular 大師之路 系列
-https://ithelp.ithome.com.tw/users/20020617/ironman/1630
-
-
-npm 基本指令
-http://dreamerslab.com/blog/tw/npm-basic-commands/
-
-
-
-解決 Windows 上輸入指令出現「因為這個系統上已停用指令碼執行，所以無法載入...」的問題
-
-https://hsiangfeng.github.io/other/20200510/1067127387/
-
-
-
 
 
 ---------------------------------------------------------
+
+## 環境建構
+
+
+
+
 
 
 清除npm cache
@@ -163,20 +137,30 @@ Set-ExecutionPolicy RemoteSigned
 
 
 
+---------------------------------------------------------
 
+## Angular 資料綁定
 
 
 
+在 Angular 中，資料綁定的方式大致上可以分成以下四種：
 
+![參考https://ithelp.ithome.com.tw/articles/10204430](./figures/20210406095030.png)
 
 
+第一種是最簡單的插值表達式。箭頭由右到左代表資料的流向是將 Component 裡的資料放到 DOM 裡；而只有一個箭頭則代表單向綁定。
 
+第二種方式我們稱之為屬性綁定。箭頭一樣是由右至左，且只有一個箭頭。這個方式是透過在 HTML 的元素上加上 [propertyName] 來達成資料綁定的目的。
 
+第三種方式叫做事件綁定。箭頭由左到右，表示資料是從 DOM 流向 Component；只有一個箭頭，一樣是單向綁定。從圖中其實就看得出來，此方式是透過 event 與 handler 來達到資料傳遞的目的，只要在 HTML 的元素上加上 (event)="handler($event)" 即可在 Component 裡取得傳回來的資料。
 
+最後一種綁定方式比較特別，兩個箭頭表示這個綁定方式是雙向綁定，其主要是透過 Angular 裡的一個叫做 Template-Driven Form 的方式來達成雙向綁定的效果。使用方式是在 HTML 元素上加上 [(ngModel)]="property" 即可從 Component 將資料綁定進去，且在使用者有修改其值時，即時將資料設定回去。
 
 
 
+下面這張圖展示了這些基礎部分之間是如何關聯起來的。
 
+![參考https://angular.tw/guide/architecture](./figures/20210406155830.png)
 
 
 
@@ -233,6 +217,43 @@ Set-ExecutionPolicy RemoteSigned
 
 
 
+
+
+
+
+
+
+
+
+---------------------------------------------------------
+
+## 參考
+
+
+30 天精通 Git 版本控管
+https://github.com/doggy8088/Learn-Git-in-30-days
+
+
+
+
+
+
+Angular 深入淺出三十天 系列
+https://ithelp.ithome.com.tw/users/20090728/ironman/1600
+
+
+Angular 大師之路 系列
+https://ithelp.ithome.com.tw/users/20020617/ironman/1630
+
+
+npm 基本指令
+http://dreamerslab.com/blog/tw/npm-basic-commands/
+
+
+
+解決 Windows 上輸入指令出現「因為這個系統上已停用指令碼執行，所以無法載入...」的問題
+
+https://hsiangfeng.github.io/other/20200510/1067127387/
 
 
 

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PreloadAllModules } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
@@ -14,9 +15,15 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     BrowserModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: '', component: ProductListComponent },
-      { path: 'products/:productId', component: ProductDetailsComponent },
-    ])
+      { path: '', 
+        component: ProductListComponent }, // 預設路由
+      { path: 'products/:productId', 
+        component: ProductDetailsComponent }
+    ], { 
+      enableTracing: true, // 在每次 Routing 改變的時候都會在控制台裡印出 Log
+      useHash: true,
+      preloadingStrategy: PreloadAllModules
+    })
   ],
   declarations: [
     AppComponent,
@@ -25,7 +32,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     ProductAlertsComponent,
     ProductDetailsComponent
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
 

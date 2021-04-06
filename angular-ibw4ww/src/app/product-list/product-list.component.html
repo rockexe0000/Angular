@@ -9,7 +9,10 @@
         {{ product.name }}
     </a> -->
 
-    <a [title]="product.name + ' details'" [routerLink]="['/products', productId]">
+    <a [title]="product.name + ' details'" 
+      [routerLink]="['/products', productId]"
+      [routerLinkActive]="'active'"
+       >
       {{ product.name }}
     </a>
 

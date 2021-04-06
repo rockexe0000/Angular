@@ -16,6 +16,9 @@ export class ProductDetailsComponent implements OnInit {
 
   ngOnInit() {
 
+    
+
+
     //window.alert('this.route = '+ this.route );
 
 

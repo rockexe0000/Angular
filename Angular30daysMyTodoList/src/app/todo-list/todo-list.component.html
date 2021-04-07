@@ -11,15 +11,41 @@
   </header>
 
   <!-- 清單區域開始 -->
-  <section class="main">
+  <section class="main" *ngIf="getList().length">
 
     <ul class="todo-list">
-      <li>
+      <li
+        *ngFor="let todo of getList();let i = index"
+        [class.completed]="todo.done"
+        [class.editing]="todo.editing"
+      >
         <div class="view">
-          <input class="toggle" type="checkbox">
-          <label>這裡要顯示待辦事項</label>
-          <button class="destroy"></button>
+          <input
+            class="toggle"
+            type="checkbox"
+            (click)="todo.toggleCompletion()"
+            [checked]="todo.done"
+          >
+
+          <label (dblclick)="edit(todo)">{{ todo.getTitle() }}</label>
+
+          <button class="destroy"
+            (click)="remove(i)"
+          ></button>
         </div>
+
+
+        <input
+          class="edit"
+          #editedtodo
+          *ngIf="todo.editing"
+          [value]="todo.getTitle()"
+          (blur)="update(todo, editedtodo.value)"
+          (keyup.enter)="update(todo, editedtodo.value)"
+          (keyup.escape)="cancelEditing(todo)"
+        >
+
+
       </li>
     </ul>
 

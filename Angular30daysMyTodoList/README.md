@@ -60,6 +60,28 @@ ng g component todo-list
 ```
 
 
+接下來我想要新增一個 Service ，將之後 CRUD 的部份都交給這個 Service 來處理，Component 只要專心處理畫面的顯示就好。
+
+所以輸入以下指令來新增 TodoListService：
+
+```
+ng generate service todo-list/todo-list
+```
+
+
+建立一個叫做 Todo 的資料物件模型：
+
+```
+ng generate class todo-list/todo --type model
+```
+
+> 在新增類別的指令額外加上 --type 的參數是為了要讓 CLI 幫我們產生檔案時，檔案名稱會變成 [filename].[type].ts 這樣的命名方式，檔案內容並不會有任何變化。
+如果沒有加上 --type 的話，CLI 在產生檔案時，檔案名稱只會是 [filename].ts 而已。
+
+
+
+
+
 
 
 

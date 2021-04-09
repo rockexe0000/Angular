@@ -9,20 +9,26 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductAlertsComponent } from './product-alerts/product-alerts.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: '', 
-        component: ProductListComponent }, // 預設路由
+      { path: '',  // 預設路由
+        component: ProductListComponent 
+      },
       { path: 'products/:productId', 
-        component: ProductDetailsComponent }
+        component: ProductDetailsComponent 
+      },
+      { path: 'cart', 
+        component: CartComponent 
+      },
     ], { 
       enableTracing: true, // 在每次 Routing 改變的時候都會在控制台裡印出 Log
-      useHash: true,
-      preloadingStrategy: PreloadAllModules
+      //useHash: true, // URL 會有 「#」
+      preloadingStrategy: PreloadAllModules // 在第一個頁面顯示後，才會陸續的將其他的module下載到本機上
     })
   ],
   declarations: [
@@ -30,7 +36,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     TopBarComponent,
     ProductListComponent,
     ProductAlertsComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    CartComponent
   ],
   bootstrap: [AppComponent]
 })

@@ -107,7 +107,7 @@ ng serve
 
 
 
-
+Angular 預設 port 是 4200
 
 ```
 http://localhost:4200/

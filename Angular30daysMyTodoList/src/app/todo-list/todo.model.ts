@@ -96,7 +96,15 @@ export class Todo {
     this.editMode = bl;
   }
 
-
+  /**
+   * 設定是否完成
+   *
+   * @param {boolean} completed
+   * @memberof Todo
+   */
+  setCompleted(completed: boolean): void {
+    this.completed = completed;
+  }
 
 
 

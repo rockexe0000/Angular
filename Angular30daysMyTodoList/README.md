@@ -80,10 +80,11 @@ ng generate class todo-list/todo --type model
 
 
 
+要記錄使用者現在看的清單是哪一種，所以讓 CLI 幫我們建立一個列舉用以列舉出所有的狀態：
 
-
-
-
+```
+ng generate enum todo-list/todo-status-type
+```
 
 
 

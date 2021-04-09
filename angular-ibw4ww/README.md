@@ -86,7 +86,7 @@ ng update @angular/cli @angular/core --allow-dirty
 Angular CLI 當然也有提供指令讓我們可以很輕鬆地就將檔案編譯並打包出來，那就是： ng build 。而編譯出來的檔案會放在根目錄的 dist 資料夾內。
 
 ```
-ng build
+ng build --source-map
 ```
 * --prod － 將會使用 Production Mode 來編譯與打包專案。
 

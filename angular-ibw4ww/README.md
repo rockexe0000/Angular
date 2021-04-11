@@ -7,9 +7,14 @@
 ## 環境建構
 
 
+Node.js 下載地址為：https://nodejs.org/en/download/
 
 
+查看當前的 Node 版本
 
+```
+node -v
+```
 
 清除npm cache
 

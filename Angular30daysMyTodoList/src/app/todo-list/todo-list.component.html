@@ -36,6 +36,9 @@
         [class.editing]="todo.editing"
       >
         <div class="view">
+
+          <p><img [src]="('http://localhost:8080/avatar/cat?id=' + todo.getTitle()+'&width=64&height=64')" />唐詩三百首</p>
+
           <input
             class="toggle"
             type="checkbox"

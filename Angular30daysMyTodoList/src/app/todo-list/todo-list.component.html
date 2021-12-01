@@ -37,7 +37,7 @@
       >
         <div class="view">
 
-          <p><img [src]="('http://localhost:8080/avatar/cat?id=' + todo.getTitle()+'&width=64&height=64')" />唐詩三百首</p>
+          <p><img [src]="(environment.avatarUrl + '/cat?id=' + todo.getTitle()+'&width=32&height=32')" />唐詩三百首</p>
 
           <input
             class="toggle"

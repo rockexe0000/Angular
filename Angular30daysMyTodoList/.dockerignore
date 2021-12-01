@@ -1,0 +1,41 @@
+**/.classpath
+**/.dockerignore
+**/.gitignore
+**/charts
+**/docker-compose.yml
+**/Dockerfile
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Log
+**/bin
+**/temp
+*.log
+
+# Gradle
+build/
+.gradle/
+
+# Maven
+**/log/
+**/target/
+.mvn/
+mvnw/
+mvnw.cmd
+
+# SVN
+.svn/
+
+
+.idea/
+
+
+node_modules/
+dist/
+
+
+HELP.md
+README.md

@@ -1,0 +1,42 @@
+version: '3.9'
+services:
+
+
+  avatar-rest-api:
+    image: "rockexe0000/avatar-rest-api"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=yuiop7890
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    # If you want to expose these ports outside your dev PC,
+    # remove the "127.0.0.1:" prefix
+    ports:
+      - 8080:8080
+    networks:
+      - app-net
+
+  angular30daysmytodolist:
+    image: "rockexe0000/angular30daysmytodolist"
+    # build:
+      # context: .
+      # args:
+      #  PROFILE: -prod
+    ports:
+      - "8081:8080"
+    environment:
+      - MONGO_INITDB_DATABASE=smart_health
+      - MONGO_INITDB_ROOT_USERNAME=mongo
+      - MONGO_INITDB_ROOT_PASSWORD=yuiop7890
+      #- PROFILE=-prod
+    depends_on:
+      - avatar-rest-api
+    networks:
+      - app-net
+
+
+networks:
+  app-net:
+    external:
+      name: nat
+
+

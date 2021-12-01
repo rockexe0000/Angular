@@ -7,6 +7,7 @@ import { Todo } from './todo.model';
 
 import { TodoStatusType } from './todo-status-type.enum';
 
+import { environment } from './../../environments/environment';
 
 
 @Component({
@@ -16,7 +17,9 @@ import { TodoStatusType } from './todo-status-type.enum';
 })
 export class TodoListComponent implements OnInit {
 
-  /**
+
+
+/**
  * 待辦事項狀態的列舉
  *
  * @memberof TodoListComponent
@@ -31,12 +34,13 @@ export class TodoListComponent implements OnInit {
  */
   private status = TodoStatusType.All;
 
-
+  environment = environment;
 
 
   constructor(private todoListService: TodoListService) { }
 
   ngOnInit(): void {
+    console.log(environment.avatarUrl);
   }
 
 
